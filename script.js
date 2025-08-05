@@ -1,4 +1,4 @@
-// Подсказки
+// Подсказки для загадок
 document.querySelectorAll('.hint-btn').forEach(button => {
   button.addEventListener('click', () => {
     const hint = button.nextElementSibling;
@@ -8,50 +8,43 @@ document.querySelectorAll('.hint-btn').forEach(button => {
   });
 });
 
-// Переход от одной загадки к следующей
+// Переход между загадками и показ финального текста квеста
 const riddles = document.querySelectorAll('.riddle');
 const nextButtons = document.querySelectorAll('.next-btn');
 const finishBlock = document.getElementById('quest-finish');
+const riddlesContainer = document.getElementById('riddles-container');
+const questIntroText = document.querySelector('.quest-intro');
 
 nextButtons.forEach(button => {
   button.addEventListener('click', () => {
     const currentRiddle = button.closest('.riddle');
     const currentIndex = parseInt(currentRiddle.dataset.index, 10);
 
+    // Скрыть текущую загадку
     currentRiddle.style.display = 'none';
 
+    // Показать следующую загадку или финальный текст
     const nextRiddle = document.querySelector(`.riddle[data-index="${currentIndex + 1}"]`);
-
     if (nextRiddle) {
-  nextRiddle.style.display = 'block';
-} else {
-  finishBlock.style.display = 'block';
-  finishBlock.classList.add('show');
+      nextRiddle.style.display = 'block';
+    } else {
+      // Показать только заголовок и финальный текст
+      finishBlock.style.display = 'block';
+      finishBlock.classList.add('show');
 
-  // Скрываем текст и кнопку "Погнали" в блоке quest
-  const questIntroText = document.querySelector('.quest p');
-  const questStartBtn = document.querySelector('.quest button:not(.next-btn):not(#to-reasons-btn)');
-
-  if (questIntroText) questIntroText.style.display = 'none';
-  if (questStartBtn) questStartBtn.style.display = 'none';
-}
-});
+      // Скрыть контейнер с загадками и вводный абзац
+      if (riddlesContainer) riddlesContainer.style.display = 'none';
+      if (questIntroText) questIntroText.style.display = 'none';
+    }
+  });
 });
 
-// Переход к блоку "9 причин"
-const toReasonsBtn = document.getElementById('to-reasons-btn');
-const reasonsSection = document.querySelector('.reasons');
-
-toReasonsBtn.addEventListener('click', () => {
-  reasonsSection.scrollIntoView({ behavior: 'smooth' });
-});
-
-// Блок "9 причин"
+// Работа с блоком "9 причин"
 document.addEventListener('DOMContentLoaded', () => {
   const showReasonsBtn = document.getElementById('show-reasons-btn');
-  const reasonsGrid = document.getElementById('reasons-grid');
   const reasonCards = document.querySelectorAll('.reason-card');
   const toFinalBtn = document.getElementById('to-final-btn');
+  const finalSection = document.querySelector('.final');
 
   if (showReasonsBtn) {
     showReasonsBtn.addEventListener('click', () => {
@@ -70,8 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Кнопка "Далее" к финальному блоку
   toFinalBtn.addEventListener('click', () => {
-    document.querySelector('.final').scrollIntoView({ behavior: 'smooth' });
+    if (finalSection) finalSection.scrollIntoView({ behavior: 'smooth' });
   });
-}); 
+});
+
+// При загрузке показать первую загадку
+document.addEventListener('DOMContentLoaded', () => {
+  riddles.forEach((riddle, index) => {
+    riddle.style.display = index === 0 ? 'block' : 'none';
+  });
+});
 

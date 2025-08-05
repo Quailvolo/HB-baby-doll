@@ -16,7 +16,10 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3 {
+/* Заголовки */
+h1,
+h2,
+h3 {
   margin-top: 0;
   color: #4b4b4b;
 }
@@ -28,19 +31,26 @@ h1 {
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-family: 'Sacramento', cursive;
+  font-size: 2.8rem;
   text-align: center;
+  color: #ffa5ab;
+  margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
+  color: #f77d89;
+  margin-bottom: 0.5rem;
 }
 
+/* Параграфы */
 p {
   font-size: 1.1rem;
   margin: 1rem 0;
 }
 
+/* Кнопки */
 button {
   background-color: #ffa5ab;
   color: white;
@@ -51,6 +61,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Raleway', sans-serif;
+  display: inline-block;
 }
 
 button:hover {
@@ -62,12 +73,19 @@ button:active {
   transform: scale(0.98);
 }
 
+button:focus {
+  outline: 2px dashed #f77d89;
+  outline-offset: 4px;
+}
+
+/* Изображения */
 img {
   max-width: 100%;
   height: auto;
   border-radius: 16px;
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
   .intro-content {
     flex-direction: column-reverse;
@@ -87,7 +105,7 @@ img {
   }
 }
 
-/* Блок #1 */
+/* --- Блок 1: Вступление --- */
 .intro {
   background-color: #fff1f5;
   padding: 4rem 0;
@@ -109,7 +127,6 @@ img {
 .intro-text h1 {
   font-size: 3.5rem;
   color: #f9c6d1;
-  font-family: 'Great Vibes', cursive;
   margin-bottom: 1rem;
 }
 
@@ -118,14 +135,6 @@ img {
   line-height: 1.8;
   color: #4b4b4b;
   margin-bottom: 2rem;
-}
-
-.intro-text button {
-  background-color: #ffa5ab;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 16px;
-  font-weight: 600;
 }
 
 .intro-image {
@@ -140,38 +149,17 @@ img {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.button-wrapper {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-/* Блок #2 */
+/* --- Блок 2: Квест с загадками --- */
 .quest {
   background-color: #dff3f2;
   padding: 4rem 1rem;
   text-align: center;
 }
 
-.quest h2 {
-  font-family: 'Sacramento', cursive;
-  font-size: 2.8rem;
-  color: #ffa5ab;
-  margin-bottom: 1rem;
-}
-
 .quest p {
   font-size: 1.2rem;
   color: #4b4b4b;
   margin-bottom: 2rem;
-}
-
-.quest > button {
-  background-color: #ffa5ab;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  border-radius: 16px;
-  font-weight: 600;
-  margin-bottom: 3rem;
 }
 
 #riddles-container {
@@ -189,12 +177,6 @@ img {
   width: 100%;
   max-width: 600px;
   text-align: left;
-}
-
-.riddle h3 {
-  font-size: 1.4rem;
-  color: #f77d89;
-  margin-bottom: 0.5rem;
 }
 
 .riddle .riddle-text {
@@ -218,25 +200,21 @@ img {
   color: #4b4b4b;
 }
 
+/* Финальный текст квеста */
 #quest-finish {
   margin-top: 3rem;
+  text-align: center;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-#quest-finish p {
-  font-size: 1.3rem;
-  color: #4b4b4b;
+#quest-finish.show {
+  display: block;
+  opacity: 1;
 }
 
-#quest-finish button {
-  margin-top: 1rem;
-  background-color: #ffa5ab;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 16px;
-  font-weight: 600;
-}
-
-/* Блок #3 */
+/* --- Блок 3: За что я тебя люблю --- */
 .reasons {
   background-color: #fff1f5;
   padding: 4rem 1rem;
@@ -282,17 +260,36 @@ img {
   transform: translateY(-5px);
 }
 
-.card-front,
-.card-back {
+.reason-card.flipped {
+  transform: rotateY(180deg);
+  opacity: 1;
+}
+
+.reason-card .card-front,
+.reason-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
   font-size: 1.1rem;
   color: #4b4b4b;
 }
 
-#to-final-btn {
-  margin-top: 2rem;
+.reason-card .card-front {
+  background-color: #f9c6d1;
+  font-weight: bold;
 }
 
-/* Блок #4 */
+.reason-card .card-back {
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+/* --- Блок 4: Финальное поздравление --- */
 .final {
   background-color: #dff3f2;
   padding: 4rem 1rem;
@@ -335,80 +332,5 @@ img {
   font-size: 1.1rem;
   border-radius: 16px;
   font-weight: 600;
-}
-
-.riddle:not(:first-child) {
-  display: none;
-}
-
-#quest-finish {
-  margin-top: 3rem;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  display: none;
-}
-
-#quest-finish.show {
-  display: block;
-  opacity: 1;
-}
-
-.reason-card .card-front,
-.reason-card .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  font-size: 1.1rem;
-}
-
-.reason-card .card-front {
-  background-color: #f9c6d1;
-  font-weight: bold;
-}
-
-.reason-card .card-back {
-  background-color: #fff;
-  transform: rotateY(180deg);
-}
-
-.reason-card.flipped {
-  transform: rotateY(180deg);
-}
-
-#to-final-btn {
-  display: none;
-}
-
-button:focus {
-  outline: 2px dashed #f77d89;
-  outline-offset: 4px;
-}
-
-#to-final-btn {
-  display: block;
-  margin: 2rem auto 0 auto;
-  /* отступ сверху и центрирование */
-}
-
-#quest-finish {
-  text-align: center;
-  /* Выравниваем содержимое по центру */
-}
-
-#to-reasons-btn {
-  display: inline-block;
-  /* чтобы кнопка могла центрироваться и имела размеры */
-  margin-top: 1rem;
-  /* отступ сверху */
-}
-
-#quest-finish p {
-  max-width: 600px;
-  margin: 0 auto;
-  /* ограничивает ширину и центрирует */
+  cursor: pointer;
 }
