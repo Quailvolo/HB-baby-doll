@@ -76,3 +76,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Анимация торта
+document.addEventListener('DOMContentLoaded', () => {
+  const makeWishBtn = document.getElementById('make-wish-btn');
+  const flames = document.querySelectorAll('.flame');
+  const confettiCanvas = document.getElementById('confetti-canvas');
+
+  // Инициализация конфетти
+  const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+
+  makeWishBtn.addEventListener('click', () => {
+    // Добавляем класс с плавным затуханием
+    flames.forEach(flame => {
+      flame.classList.add('extinguished');
+
+      // Через 1.5 сек убираем анимацию, чтобы не мешала
+      setTimeout(() => {
+        flame.style.animation = 'none';
+      }, 1500);
+    });
+
+    // Запуск основного залпа конфетти
+    myConfetti({
+      particleCount: 200,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+
+    // Повторные мини-залпы
+    let count = 5;
+    const interval = setInterval(() => {
+      myConfetti({
+        particleCount: 50,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+      count--;
+      if (count <= 0) clearInterval(interval);
+    }, 400);
+
+    // Деактивируем кнопку
+    makeWishBtn.disabled = true;
+    makeWishBtn.style.cursor = 'default';
+    makeWishBtn.style.opacity = '0.6';
+  });
+});
+
