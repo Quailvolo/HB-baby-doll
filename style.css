@@ -87,6 +87,7 @@ img {
   }
 }
 
+/* Блок #1 */
 .intro {
   background-color: #fff1f5;
   padding: 4rem 0;
@@ -137,4 +138,195 @@ img {
   max-width: 400px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Блок #2 */
+.quest {
+  background-color: #dff3f2;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.quest h2 {
+  font-family: 'Sacramento', cursive;
+  font-size: 2.8rem;
+  color: #ffa5ab;
+  margin-bottom: 1rem;
+}
+
+.quest p {
+  font-size: 1.2rem;
+  color: #4b4b4b;
+  margin-bottom: 2rem;
+}
+
+.quest > button {
+  background-color: #ffa5ab;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+#riddles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.riddle {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.riddle h3 {
+  font-size: 1.4rem;
+  color: #f77d89;
+  margin-bottom: 0.5rem;
+}
+
+.riddle .riddle-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.riddle .hint-btn,
+.riddle .next-btn {
+  background-color: #ffa5ab;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+.hint-text {
+  font-size: 0.95rem;
+  background-color: #f9c6d1;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  margin-top: 0.75rem;
+  color: #4b4b4b;
+}
+
+#quest-finish {
+  margin-top: 3rem;
+}
+
+#quest-finish p {
+  font-size: 1.3rem;
+  color: #4b4b4b;
+}
+
+#quest-finish button {
+  margin-top: 1rem;
+  background-color: #ffa5ab;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+/* Блок #3 */
+.reasons {
+  background-color: #fff1f5;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.reasons h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: #f9c6d1;
+  margin-bottom: 2rem;
+}
+
+#show-reasons-btn {
+  margin-bottom: 3rem;
+}
+
+#reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+
+.reason-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  transition: transform 0.3s ease;
+  cursor: default;
+  font-family: 'Raleway', sans-serif;
+}
+
+.reason-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-front,
+.card-back {
+  font-size: 1.1rem;
+  color: #4b4b4b;
+}
+
+#to-final-btn {
+  margin-top: 2rem;
+}
+
+/* Блок #4 */
+.final {
+  background-color: #dff3f2;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.final h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: #ffa5ab;
+  margin-bottom: 1.5rem;
+}
+
+.final p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  color: #4b4b4b;
+  line-height: 1.8;
+}
+
+#cake-animation {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  background-color: #fff;
+  border: 2px dashed #ffa5ab;
+  border-radius: 16px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sacramento', cursive;
+  color: #f77d89;
+  font-size: 1.5rem;
+}
+
+#make-wish-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  font-weight: 600;
 }
