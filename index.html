@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;400;600&family=Sacramento&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <title>Happy birthday baby</title>
+</head>
+<body>
+  <main>
+    <!-- Блок 1: Вступление -->
+    <section class="intro">
+      <div class="container intro-content">
+        <div class="container intro-text">
+          <h1>С днём рождения пупс</h1>
+          <p>
+            Зная насколько сильно ты любишь приключения, я принял решение, что мой подарок просто так ты не получишь.
+            Сегодня ты пройдешь маленькое, но романтичное путешествие, которое приведёт тебя к нему...
+          </p>
+          <button>Вперёд!</button>
+        </div>
+        <div class="container intro-image">
+          <img src="images/baby.jpg" alt="baby">
+        </div>
+      </div>
+    </section>
+    <!-- Блок 2: Квест с загадками -->
+    <section class="quest">
+      <div class="container">
+        <h2>Твой романтичный квест</h2>
+        <p>
+          Чтобы получить свои подарки, тебе предстоит разгадать несколько загадок.
+        </p>
+        <button>Погнали!</button>
+        <div id="riddles-container">
+          <div class="riddle" data-index="1">
+            <h3>Загадка #1</h3>
+            <p class="riddle-text">Я там, где утро начинается с аромата... Где же я?</p>
+            <button class="hint-btn">Подсказка</button>
+            <div class="hint-text" style="display: none;">
+              Подсказка: место, где ты пьёшь кофе утром
+            </div>
+            <button class="next-btn">Следующая загадка</button>
+          </div>
+          <div class="riddle" data-index="2">
+            <h3>Загадка #2</h3>
+            <p class="riddle-text">Я там, где утро начинается с аромата... Где же я?</p>
+            <button class="hint-btn">Подсказка</button>
+            <div class="hint-text" style="display: none;">
+              Подсказка: место, где ты пьёшь кофе утром
+            </div>
+            <button class="next-btn">Следующая загадка</button>
+          </div>
+          <div class="riddle" data-index="3">
+            <h3>Загадка #3</h3>
+            <p class="riddle-text">Я там, где утро начинается с аромата... Где же я?</p>
+            <button class="hint-btn">Подсказка</button>
+            <div class="hint-text" style="display: none;">
+              Подсказка: место, где ты пьёшь кофе утром
+            </div>
+            <button class="next-btn">Следующая загадка</button>
+          </div>
+          <div class="riddle" data-index="4">
+            <h3>Загадка #4</h3>
+            <p class="riddle-text">Я там, где утро начинается с аромата... Где же я?</p>
+            <button class="hint-btn">Подсказка</button>
+            <div class="hint-text" style="display: none;">
+              Подсказка: место, где ты пьёшь кофе утром
+            </div>
+          </div>
+        </div>
+          <div id="quest-finish" style="display: none;">
+            <p>
+              Умница! Осталось ещё кое-что, что я хочу тебе сказать...
+              <button id="to-reasons-btn">Далее</button>
+            </p>
+          </div>
+      </div>
+    </section>
+    <!-- Блок 3: За что я тебя люблю -->
+    <section class="reasons">
+      <div class="container">
+        <h2>За что я тебя люблю?</h2>
+        <button id="show-reasons-btn">Ну и за что же?</button>
+        <div id="reasons-grid" style="display: none;">
+          <!-- Карта #1 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #2 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #3 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #4 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #5 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #6 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #7 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #8 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+          <!-- Карта #9 -->
+          <div class="reason-card">
+            <div class="card-front">Улыбка</div>
+            <div class="card-back">Твоя улыбка озаряет мой день.</div>
+          </div>
+        </div>
+        <button id="to-final-btn" style="display: none;">Далее</button>
+      </div>
+    </section>
+    <!-- Блок 4: Финальное поздравление -->
+    <section class="final">
+      <div class="container">
+        <h2>Финальное поздравление</h2>
+        <p>
+          С днём рождения, любовь моя. Я желаю тебе самых ярких эмоций, тепла, вдохновения и бесконечного счастья. Пусть каждый день будет наполнен радостью и любовью. Ты заслуживаешь всего самого прекрасного.
+        </p>
+        <div id="cake-animation">
+          <!-- Здесь будет торт с мигающими свечами -->
+        </div>
+        <button id="make-wish-btn">Загадать желание</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

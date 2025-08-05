@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #ff1f5f;
+  color: #4b4b4b;
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  color: #4b4b4b;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+button {
+  background-color: #ffa5ab;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s else;
+  font-family: 'Raleway', sans-serif;
+}
+
+button:hover {
+  background-color: #f77d89;
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+  }
+
+  .intro-text button {
+    width: 100%;
+  }
+}
+
+.intro {
+  background-color: #fff1f5;
+  padding: 4rem 0;
+}
+
+.intro-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.intro-text {
+  flex: 1 1 50%;
+  text-align: left;
+}
+
+.intro-text h1 {
+  font-size: 3.5rem;
+  color: #f9c6d1;
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4b4b4b;
+  margin-bottom: 2rem;
+}
+
+.intro-text button {
+  background-color: #ffa5ab;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.intro-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
